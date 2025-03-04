@@ -18,27 +18,7 @@ class App(CTk):
 
         self.main_title()
         self.select_job()
-
-        # Create button to calculate
-
-        # get font
-        button_1 = CTkFont(family="Lexend Deca",size=20)
-        fire_emoji=ImageTk.PhotoImage(
-            Image.open("ffxiv-mitigation-calculator/resources/images/fire_emoji.png").resize((15,15)))
-
-        btn=CTkButton(master=self,
-            text='Calculate',
-            corner_radius=5,
-            fg_color="#7cbdd9",
-            hover_color="#c7eeff",
-            text_color="#000",
-            image=fire_emoji,
-            font=button_1,
-            command=self.calculate_value)
-        btn.place(relx=0.2,rely=0.9,anchor='center')
-        
-
-
+        self.calculate_button()
 
     def main_title(self):
 
@@ -69,6 +49,29 @@ class App(CTk):
                                 border_color="#5a8ba1",
                                 button_color="#5a8ba1")
         job_dropdown.place(relx=0.2,rely=0.2,anchor="center")
+
+    def calculate_button(self):
+        
+        '''
+        Creates button to calculate the value of the damage taken once
+        mitigation has been selected.
+        '''
+
+        # get font
+        button_1 = CTkFont(family="Lexend Deca",size=20)
+        fire_emoji=ImageTk.PhotoImage(
+            Image.open("ffxiv-mitigation-calculator/resources/images/fire_emoji.png").resize((15,15)))
+
+        btn=CTkButton(master=self,
+            text='Calculate',
+            corner_radius=5,
+            fg_color="#7cbdd9",
+            hover_color="#c7eeff",
+            text_color="#000",
+            image=fire_emoji,
+            font=button_1,
+            command=self.calculate_value)
+        btn.place(relx=0.2,rely=0.9,anchor='center')
 
     def calculate_value(self):
 
