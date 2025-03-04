@@ -12,9 +12,7 @@ class App(CTk):
         set_appearance_mode("light")
         self.title('FFXIV Mitigation Calculator')
 
-        '''
-        Create app structure.
-        '''
+        # Create app structure.
 
         self.main_title()
         self.select_job()
@@ -51,14 +49,14 @@ class App(CTk):
         job_dropdown.place(relx=0.2,rely=0.2,anchor="center")
 
     def calculate_button(self):
-        
+
         '''
         Creates button to calculate the value of the damage taken once
         mitigation has been selected.
         '''
 
-        # get font
         button_1 = CTkFont(family="Lexend Deca",size=20)
+        
         fire_emoji=ImageTk.PhotoImage(
             Image.open("ffxiv-mitigation-calculator/resources/images/fire_emoji.png").resize((15,15)))
 
